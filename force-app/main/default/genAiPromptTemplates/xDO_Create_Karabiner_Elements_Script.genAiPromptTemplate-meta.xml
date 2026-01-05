@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>w6SANNTCHJPlZYpJCePZK6f3RhQzytPYfHmYyJOauk4=_1</activeVersionIdentifier>
+    <description>Takes an Agentforce Script and generates the code to use for keyboard shortcuts</description>
+    <developerName>xDO_Create_Karabiner_Elements_Script</developerName>
+    <masterLabel>xDO | Create Karabiner Elements Script</masterLabel>
+    <templateVersions>
+        <content>Use this example to take demo scripts and output this JSON when asked to create a new Karabiner Elements script. The description should always follow the same naming format. Apostrophes and quotes tend to cause issues so just remove those from any text in the script. This will be used in a Karabiner Elements keyboard override. Return only the JSON as a final result. The script should include the messages sent by the user.
+
+Example:
+{
+  &quot;description&quot;: &quot;Sofia Demo Script (right_option + 1–7)&quot;,
+  &quot;manipulators&quot;: [
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;1&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;I have RSVP to the Sustainability Leadership Summit event I have a few questions\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;2&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;Sofia Sanders-Hernandez\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;3&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;Where can I park for the event?\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;4&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;What should I wear?\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;5&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;Would like to bring my husband.\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;6&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;My husbands name is Miguel Hernandez.\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    },
+    {
+      &quot;from&quot;: {
+        &quot;key_code&quot;: &quot;7&quot;,
+        &quot;modifiers&quot;: { &quot;mandatory&quot;: [&quot;right_option&quot;] }
+      },
+      &quot;to&quot;: [{ &quot;shell_command&quot;: &quot;osascript -e &apos;tell application \&quot;System Events\&quot; to keystroke \&quot;Yes, he is vegetarian.\&quot;&apos;&quot; }],
+      &quot;type&quot;: &quot;basic&quot;
+    }
+  ]
+}
+Demo Script: {!$Input:agentforceScript}
+</content>
+        <inputs>
+            <apiName>agentforceScript</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>agentforceScript</masterLabel>
+            <referenceName>Input:agentforceScript</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>w6SANNTCHJPlZYpJCePZK6f3RhQzytPYfHmYyJOauk4=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

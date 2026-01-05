@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Grabs a scripted agent reply from Agent Script object</description>
+    <developerName>xDO_Script_Agent_Replies</developerName>
+    <invocationTarget>xDO_Script_Agent_Replies</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>xDO | Script Agent Replies</masterLabel>
+</GenAiFunction>

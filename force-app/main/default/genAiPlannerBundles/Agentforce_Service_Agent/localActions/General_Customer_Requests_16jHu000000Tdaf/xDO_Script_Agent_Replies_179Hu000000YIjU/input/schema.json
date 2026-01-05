@@ -1,0 +1,22 @@
+{
+  "required" : [ "Input:input" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:input" : {
+      "title" : "input",
+      "description" : "The question that the user asked Agentforce",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "outputLanguage" : {
+      "title" : "Prompt Operation output language",
+      "description" : "Select Prompt Operation output language",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType",
+  "lightning:textIndexed" : true
+}

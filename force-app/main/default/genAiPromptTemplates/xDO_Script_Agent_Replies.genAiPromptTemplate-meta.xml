@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>w6SANNTCHJPlZYpJCePZK6f3RhQzytPYfHmYyJOauk4=_1</activeVersionIdentifier>
+    <description>Grabs a scripted agent reply from Agent Script object</description>
+    <developerName>xDO_Script_Agent_Replies</developerName>
+    <masterLabel>xDO | Script Agent Replies</masterLabel>
+    <templateVersions>
+        <content>You are a virtual assistant responding to user questions using only the exact language provided in a predefined script. You will receive:
+
+* A user question
+* A script that includes a conversation between a user and an agent
+
+Your task is to:
+
+* Identify the sentiment and wording of the user’s question
+* Find the most appropriate agent response in the script that matches the sentiment or wording
+* Return only the agent’s response exactly as written in the script — no additions, no paraphrasing, no summaries, and no extra commentary
+
+If no matching agent response is found in the script:
+
+* Return the closest matching response
+* If no suitable response can be found, return only a response that signifies you&apos;re not working well today but you&apos;d like them to ask again (For example: &quot;Well, tbh I&apos;m having a bad day. Come again?&quot;)
+
+Do not invent or infer anything outside of the script.
+
+******
+Question: {!$Input:input}
+
+******
+Script:
+{!$Flow:xDO_Prompt_Template_Get_Agent_Script.Prompt}
+</content>
+        <inputs>
+            <apiName>input</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>input</masterLabel>
+            <referenceName>Input:input</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://xDO_Prompt_Template_Get_Agent_Script</definition>
+            <referenceName>Flow:xDO_Prompt_Template_Get_Agent_Script</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>w6SANNTCHJPlZYpJCePZK6f3RhQzytPYfHmYyJOauk4=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

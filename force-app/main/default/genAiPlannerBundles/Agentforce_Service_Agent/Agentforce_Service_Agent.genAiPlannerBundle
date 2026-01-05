@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlannerBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Agent is fully scripted, only returns results you put in Agent Script. Deliver personalized customer interactions with an autonomous AI agent. Agentforce Service Agent intelligently supports your customers with common inquiries and escalates complex issues.</description>
+    <localActionLinks>
+        <genAiFunctionName>AnswerQuestionsWithKnowledge_16jHu000000Tdaf</genAiFunctionName>
+    </localActionLinks>
+    <localTopicLinks>
+        <genAiPluginName>General_Customer_Requests_16jHu000000Tdaf</genAiPluginName>
+    </localTopicLinks>
+    <localTopics>
+        <fullName>General_Customer_Requests_16jHu000000Tdaf</fullName>
+        <canEscalate>false</canEscalate>
+        <description>Handles a wide range of general customer inquiries and requests that do not fall under specific predefined topics.</description>
+        <developerName>General_Customer_Requests_16jHu000000Tdaf</developerName>
+        <genAiPluginInstructions>
+            <description>Pass the user question into the action and return only the response.</description>
+            <developerName>instruction_passtheuse0</developerName>
+            <language>en_US</language>
+            <masterLabel>instruction_passtheuse0</masterLabel>
+            <sortOrder>0</sortOrder>
+        </genAiPluginInstructions>
+        <language>en_US</language>
+        <localActionLinks>
+            <functionName>xDO_Script_Agent_Replies_179Hu000000YIjU</functionName>
+        </localActionLinks>
+        <localActions>
+            <fullName>xDO_Script_Agent_Replies_179Hu000000YIjU</fullName>
+            <description>Grabs a scripted agent reply from Agent Script object</description>
+            <developerName>xDO_Script_Agent_Replies_179Hu000000YIjU</developerName>
+            <invocationTarget>xDO_Script_Agent_Replies</invocationTarget>
+            <invocationTargetType>generatePromptResponse</invocationTargetType>
+            <isConfirmationRequired>false</isConfirmationRequired>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>xDO_Script_Agent_Replies</localDeveloperName>
+            <masterLabel>xDO | Script Agent Replies</masterLabel>
+            <source>xDO_Script_Agent_Replies</source>
+        </localActions>
+        <localDeveloperName>General_Customer_Requests</localDeveloperName>
+        <masterLabel>General Customer Requests</masterLabel>
+        <pluginType>Topic</pluginType>
+        <scope>Your job is to address any general customer requests and inquiries by providing relevant information or escalating to a human agent if necessary.</scope>
+    </localTopics>
+    <masterLabel>Agentforce Service Agent</masterLabel>
+    <plannerActions>
+        <fullName>AnswerQuestionsWithKnowledge_16jHu000000Tdaf</fullName>
+        <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: “What is your return policy?” “How do I fix an issue?” or “What features does a product have?”</description>
+        <developerName>AnswerQuestionsWithKnowledge_16jHu000000Tdaf</developerName>
+        <invocationTarget>streamKnowledgeSearch</invocationTarget>
+        <invocationTargetType>standardInvocableAction</invocationTargetType>
+        <isConfirmationRequired>false</isConfirmationRequired>
+        <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+        <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+        <masterLabel>Answer Questions with Knowledge</masterLabel>
+        <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+        <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+    </plannerActions>
+    <plannerType>AiCopilot__ReAct</plannerType>
+    <ruleExpressions>
+        <conditions>
+            <leftOperand>isVerified</leftOperand>
+            <leftOperandType>Variable</leftOperandType>
+            <operator>equal</operator>
+            <rightOperandValue>true</rightOperandValue>
+        </conditions>
+        <expression>Verified_User</expression>
+        <expressionLabel>Verified User</expressionLabel>
+        <expressionName>Verified_User</expressionName>
+        <expressionType>sel</expressionType>
+    </ruleExpressions>
+</GenAiPlannerBundle>
